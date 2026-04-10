@@ -3,17 +3,44 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MapPin, Phone, Clock } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const curvedImageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.to(".hero-bg", {
-        yPercent: 20,
+      // Split text animation for "Casper's"
+      const chars = titleRef.current?.querySelectorAll(".split-char");
+      if (chars) {
+        gsap.fromTo(
+          chars,
+          { y: "100%", opacity: 0 },
+          {
+            y: "0%",
+            opacity: 1,
+            duration: 1.2,
+            stagger: 0.08,
+            ease: "power3.out",
+            delay: 0.5,
+          }
+        );
+      }
+
+      // Curved image reveal (clip-path animation)
+      gsap.to(curvedImageRef.current, {
+        clipPath: "circle(150% at 50% 50%)",
+        duration: 1.8,
+        ease: "power3.inOut",
+        delay: 0.3,
+      });
+
+      // Parallax on scroll
+      gsap.to(curvedImageRef.current, {
+        yPercent: 30,
         ease: "none",
         scrollTrigger: {
           trigger: heroRef.current,
@@ -23,80 +50,87 @@ export default function Hero() {
         },
       });
 
-      gsap.from(".hero-content > *", {
-        y: 60,
+      // Logo fade in
+      gsap.from(".nav-item", {
         opacity: 0,
-        duration: 1,
-        stagger: 0.15,
-        ease: "power3.out",
-        delay: 0.3,
+        y: -20,
+        duration: 0.8,
+        stagger: 0.1,
+        delay: 1.5,
       });
     }, heroRef);
 
     return () => ctx.revert();
   }, []);
 
+  const splitText = (text: string) => {
+    return text.split("").map((char, i) => (
+      <span key={i} className="split-char inline-block">
+        {char === " " ? "\u00A0" : char}
+      </span>
+    ));
+  };
+
   return (
     <section
       ref={heroRef}
-      className="relative h-screen w-full overflow-hidden bg-zarko-darker"
+      className="relative h-screen w-full overflow-hidden bg-[#0a0a0a]"
     >
-      {/* Background */}
-      <div className="hero-bg absolute inset-0 w-full h-[120%] -top-[10%]">
-        <div className="absolute inset-0 bg-gradient-to-b from-zarko-darker/80 via-zarko-darker/50 to-zarko-darker z-10" />
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-70"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2000&auto=format&fit=crop')`
-          }}
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-6">
+        <div className="flex gap-8">
+          <a href="#" className="nav-item text-sm text-caviar-cream/80 hover:text-caviar-gold transition-colors">
+            Shop
+          </a>
+          <a href="#" className="nav-item text-sm text-caviar-cream/80 hover:text-caviar-gold transition-colors">
+            About
+          </a>
+          <a href="#" className="nav-item text-sm text-caviar-cream/80 hover:text-caviar-gold transition-colors">
+            Sourcing
+          </a>
+        </div>
+        <div className="flex gap-8">
+          <a href="#" className="nav-item text-sm text-caviar-cream/80 hover:text-caviar-gold transition-colors">
+            Contact
+          </a>
+          <a href="#" className="nav-item text-sm text-caviar-cream/80 hover:text-caviar-gold transition-colors">
+            Cart
+          </a>
+        </div>
+      </nav>
+
+      {/* Curved Image Background */}
+      <div
+        ref={curvedImageRef}
+        className="absolute inset-0 w-full h-full"
+        style={{ clipPath: "circle(0% at 50% 50%)" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-transparent to-[#0a0a0a] z-10" />
+        <img
+          src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?q=80&w=2000&auto=format&fit=crop"
+          alt="Caviar"
+          className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-6">
-        <div className="hero-content max-w-4xl">
-          <span className="inline-block text-zarko-terra text-sm tracking-[0.4em] uppercase mb-6 font-medium">
-            Kroatisch • Mediterran • Regional
-          </span>
-
-          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl text-zarko-cream mb-6 leading-none">
-            Zum Zarko
-          </h1>
-
-          <p className="text-xl md:text-2xl text-zarko-clay font-light mb-4 italic">
-            Wo das Schwarzwald-Herz auf Kroatien trifft
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-zarko-cream/80">
-            <div className="flex items-center gap-2">
-              <MapPin size={16} className="text-zarko-terra" />
-              <span>Hauptstraße 45, 77933 Lahr</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Phone size={16} className="text-zarko-terra" />
-              <span>+49 7821 12345</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock size={16} className="text-zarko-terra" />
-              <span>Di-So: 11:30-14:30 & 17:30-22:00</span>
-            </div>
-          </div>
-
-          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-zarko-terra text-white hover:bg-zarko-terra/90 transition-all duration-300 tracking-widest text-sm uppercase font-medium">
-              Tisch Reservieren
-            </button>
-            <button className="px-8 py-4 border border-zarko-cream/30 text-zarko-cream hover:border-zarko-terra hover:text-zarko-terra transition-all duration-300 tracking-widest text-sm uppercase">
-              Speisekarte
-            </button>
-          </div>
-        </div>
+      {/* Centered Title */}
+      <div className="absolute inset-0 flex items-center justify-center z-20">
+        <h1
+          ref={titleRef}
+          className="font-serif text-[12vw] md:text-[10vw] text-[#f5f0e8] overflow-hidden"
+        >
+          {splitText("Casper's")}
+        </h1>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
-        <div className="w-6 h-10 border-2 border-zarko-cream/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-zarko-terra rounded-full mt-2 animate-bounce" />
+      {/* Bottom Text */}
+      <div className="absolute bottom-8 left-8 right-8 z-20 flex justify-between items-end">
+        <p className="max-w-md text-sm text-[#f5f0e8]/80 leading-relaxed">
+          Exceptional caviar, sourced with care and presented with intention — created for innovative restaurants, meaningful gatherings, and unforgettable moments.
+        </p>
+        <div className="flex items-center gap-2 text-[#f5f0e8]">
+          <span className="text-sm tracking-widest">CAVIAR BELOW</span>
+          <div className="w-12 h-[1px] bg-[#f5f0e8]" />
         </div>
       </div>
     </section>

@@ -9,15 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        zarko: {
-          dark: "#1a1a1a",
-          darker: "#0f0f0f",
-          terra: "#c75b39",      /* Terrakotta - warmes Orange */
-          clay: "#e8a87c",       /* Sand/Clay */
-          gold: "#d4a574",       /* Warmes Gold */
-          cream: "#f5f5f0",      /* Warmes Weiß */
-          olive: "#4a5d23",      /* Olivgrün für Akzente */
-          gray: "#2d2d2d",
+        caviar: {
+          dark: "#0a0a0a",
+          cream: "#f5f0e8",
+          gold: "#c9a962",
         },
       },
       fontFamily: {
