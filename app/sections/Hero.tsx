@@ -146,7 +146,7 @@ export default function Hero() {
           </p>
           {/* Google Bewertung – Link zu Google Maps Rezensionen */}
           <a
-            href="https://www.google.com/maps/place/Zum+Zarko/@48.3503,7.8729,17z/data=!4m8!3m7!1s0x4791b8a00e8d7a77:0x1!8m2!3d48.3503!4d7.8729!9m1!1b1"
+            href="https://www.google.com/maps/place/Zum+Zarko/@48.3409658,7.8694855,18z/data=!4m15!1m8!3m7!1s0x47912e46405fa751:0xfa21ff2608363c56!2sZum+Zarko!8m2!3d48.3409658!4d7.8707756!10e2!16s%2Fg%2F1td52b_v!3m5!1s0x47912e46405fa751:0xfa21ff2608363c56!8m2!3d48.3409658!4d7.8707756!16s%2Fg%2F1td52b_v?entry=ttu&g_ep=EgoyMDI2MDQwNy4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors group"

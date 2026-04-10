@@ -2,6 +2,7 @@ import SmoothScroll from "./components/SmoothScroll";
 import Hero from "./sections/Hero";
 import ShopSection from "./sections/ShopSection";
 import AboutSection from "./sections/AboutSection";
+import BundesligaSection from "./sections/BundesligaSection";
 import OpeningHoursSection from "./sections/OpeningHoursSection";
 import ReservationSection from "./sections/ReservationSection";
 import FooterSection from "./sections/FooterSection";
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <ShopSection />
         <AboutSection />
+        <BundesligaSection />
         <OpeningHoursSection />
         <ReservationSection />
         <FooterSection />
