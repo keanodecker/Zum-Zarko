@@ -91,7 +91,15 @@ export default function Hero() {
           <a href="#reservieren" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
             Reservieren
           </a>
-          <a href="#" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
+          <a href="#event" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
+            Event
+          </a>
+          <a
+            href="https://www.bon-bon.de/gutschein/traditionsgaststaette-greif-zum-zarko/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors"
+          >
             Geschenkkarte
           </a>
         </div>

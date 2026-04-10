@@ -5,6 +5,7 @@ import AboutSection from "./sections/AboutSection";
 import BundesligaSection from "./sections/BundesligaSection";
 import OpeningHoursSection from "./sections/OpeningHoursSection";
 import ReservationSection from "./sections/ReservationSection";
+import EventSection from "./sections/EventSection";
 import FooterSection from "./sections/FooterSection";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <BundesligaSection />
         <OpeningHoursSection />
         <ReservationSection />
+        <EventSection />
         <FooterSection />
       </main>
     </SmoothScroll>
