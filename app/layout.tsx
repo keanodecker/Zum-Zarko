@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Casper's Caviar – Premium Caviar",
-  description: "Exceptional caviar, sourced with care and presented with intention.",
+  title: "Zum Zarko – Kroatisch • Mediterran • Regional",
+  description: "Authentische kroatische Küche im Herzen des Schwarzwalds. Seit über 20 Jahren. Tradition trifft auf Herzlichkeit.",
 };
 
 export default function RootLayout({
@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="de">
       <body>
         <div className="grain-overlay" />
         {children}

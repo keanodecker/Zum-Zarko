@@ -63,17 +63,17 @@ export default function FooterSection() {
   };
 
   return (
-    <section ref={sectionRef} className="relative h-screen bg-[#0a0a0a] overflow-hidden">
+    <section id="contact" ref={sectionRef} className="relative h-screen bg-zarko-darker overflow-hidden">
       {/* Background Image with Zoom */}
       <div
         ref={imageRef}
         className="absolute inset-0 w-full h-full"
         style={{ transform: "scale(1.3)" }}
       >
-        <div className="absolute inset-0 bg-[#0a0a0a]/40 z-10" />
+        <div className="absolute inset-0 bg-zarko-darker/50 z-10" />
         <img
-          src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=2000&auto=format&fit=crop"
-          alt="Caviar ritual"
+          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2000&auto=format&fit=crop"
+          alt="Zum Zarko Atmosphäre"
           className="w-full h-full object-cover"
         />
       </div>
@@ -84,66 +84,70 @@ export default function FooterSection() {
         <div className="pt-32">
           <h2
             ref={textRef}
-            className="font-serif text-[8vw] md:text-[6vw] text-[#f5f0e8] leading-none overflow-hidden"
+            className="font-serif text-[8vw] md:text-[6vw] text-zarko-cream leading-none overflow-hidden"
           >
-            {splitText("NOT JUST CAVIAR,")}
+            {splitText("NICHT NUR EIN RESTAURANT,")}
             <br />
-            {splitText("A MODERN RITUAL.")}
+            {splitText("EINE TRADITION.")}
           </h2>
         </div>
 
-        {/* Newsletter */}
+        {/* Reservation CTA */}
         <div className="flex justify-end">
           <div className="max-w-md space-y-4">
-            <p className="text-sm text-[#f5f0e8]/60 tracking-widest">JOIN THE LIST</p>
-            <p className="text-sm text-[#f5f0e8]/80">
-              Become a member of Casper's Caviar to get exclusive content and first look at new arrivals.
-            </p>
-            <div className="flex border-b border-[#f5f0e8]/30 pb-2">
-              <input
-                type="email"
-                placeholder="Email"
-                className="bg-transparent flex-1 text-[#f5f0e8] placeholder-[#f5f0e8]/40 outline-none"
-              />
-              <button className="text-[#f5f0e8] hover:text-[#c9a962] transition-colors">→</button>
+            <p className="text-sm text-zarko-cream/60 tracking-widest">BESUCHEN SIE UNS</p>
+            <div className="space-y-2 text-sm text-zarko-cream/80">
+              <p>Hauptstraße 45, 77933 Lahr/Schwarzwald</p>
+              <p>Di–Fr: 11:30–14:30 & 17:30–22:00</p>
+              <p>Sa: 17:30–22:30 | So: 11:30–14:30 & 17:00–21:00</p>
+              <p className="text-zarko-terra">Mo: Ruhetag</p>
             </div>
+            <a
+              href="tel:+497821123456"
+              className="flex items-center gap-3 border-b border-zarko-cream/30 pb-2 hover:border-zarko-terra transition-colors group"
+            >
+              <span className="text-zarko-cream group-hover:text-zarko-terra transition-colors">+49 7821 12345</span>
+              <span className="text-zarko-cream/40 group-hover:text-zarko-terra transition-colors">→</span>
+            </a>
           </div>
         </div>
 
         {/* Footer Links */}
-        <div className="flex justify-between items-end border-t border-[#f5f0e8]/10 pt-8">
+        <div className="flex justify-between items-end border-t border-zarko-cream/10 pt-8">
           <div className="max-w-sm">
-            <p className="text-xs text-[#f5f0e8]/60 leading-relaxed">
-              Premium-grade caviar, thoughtfully sourced from pristine waters around the world and presented with intention — crafted to bring people together through exceptional flavor, texture, and shared moments.
+            <p className="text-xs text-zarko-cream/60 leading-relaxed">
+              Authentische kroatische Küche im Herzen des Schwarzwalds —
+              wo kroatische Tradition und regionale Zutaten seit über 20 Jahren aufeinandertreffen.
             </p>
           </div>
           <div className="flex gap-16">
             <div className="space-y-2">
-              <p className="text-xs text-[#f5f0e8]/40 tracking-widest">INFORMATION</p>
-              <ul className="space-y-1 text-sm text-[#f5f0e8]/80">
-                <li><a href="#" className="hover:text-[#c9a962] transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-[#c9a962] transition-colors">Contact</a></li>
-                <li><a href="#" className="hover:text-[#c9a962] transition-colors">FAQ</a></li>
-                <li><a href="#" className="hover:text-[#c9a962] transition-colors">Caviar 101</a></li>
+              <p className="text-xs text-zarko-cream/40 tracking-widest">RESTAURANT</p>
+              <ul className="space-y-1 text-sm text-zarko-cream/80">
+                <li><a href="#about" className="hover:text-zarko-terra transition-colors">Über uns</a></li>
+                <li><a href="#menu" className="hover:text-zarko-terra transition-colors">Speisekarte</a></li>
+                <li><a href="#contact" className="hover:text-zarko-terra transition-colors">Reservierung</a></li>
+                <li><a href="#" className="hover:text-zarko-terra transition-colors">Mittagstisch</a></li>
               </ul>
             </div>
             <div className="space-y-2">
-              <p className="text-xs text-[#f5f0e8]/40 tracking-widest">SHOP</p>
-              <ul className="space-y-1 text-sm text-[#f5f0e8]/80">
-                <li><a href="#" className="hover:text-[#c9a962] transition-colors">White Sturgeon</a></li>
-                <li><a href="#" className="hover:text-[#c9a962] transition-colors">Siberian Sturgeon</a></li>
-                <li><a href="#" className="hover:text-[#c9a962] transition-colors">Ossetra</a></li>
+              <p className="text-xs text-zarko-cream/40 tracking-widest">HIGHLIGHTS</p>
+              <ul className="space-y-1 text-sm text-zarko-cream/80">
+                <li><a href="#menu" className="hover:text-zarko-terra transition-colors">Ćevapčići</a></li>
+                <li><a href="#menu" className="hover:text-zarko-terra transition-colors">Peka</a></li>
+                <li><a href="#menu" className="hover:text-zarko-terra transition-colors">Mixed Grill</a></li>
               </ul>
             </div>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="flex justify-between items-center pt-4 text-xs text-[#f5f0e8]/40">
-          <span>Casper's Caviar © 2026</span>
+        <div className="flex justify-between items-center pt-4 text-xs text-zarko-cream/40">
+          <span>© 2025 Zum Zarko. Alle Rechte vorbehalten.</span>
           <div className="flex gap-8">
-            <a href="#" className="hover:text-[#c9a962] transition-colors">Instagram</a>
-            <a href="#" className="hover:text-[#c9a962] transition-colors">Credits</a>
+            <a href="#" className="hover:text-zarko-terra transition-colors">Instagram</a>
+            <a href="#" className="hover:text-zarko-terra transition-colors">Impressum</a>
+            <a href="#" className="hover:text-zarko-terra transition-colors">Datenschutz</a>
           </div>
         </div>
       </div>

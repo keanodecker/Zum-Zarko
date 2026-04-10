@@ -13,7 +13,7 @@ export default function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Split text animation for "Casper's"
+      // Split text animation for "Zum Zarko"
       const chars = titleRef.current?.querySelectorAll(".split-char");
       if (chars) {
         gsap.fromTo(
@@ -50,7 +50,7 @@ export default function Hero() {
         },
       });
 
-      // Logo fade in
+      // Nav fade in
       gsap.from(".nav-item", {
         opacity: 0,
         y: -20,
@@ -74,27 +74,30 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative h-screen w-full overflow-hidden bg-[#0a0a0a]"
+      className="relative h-screen w-full overflow-hidden bg-zarko-darker"
     >
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-6">
         <div className="flex gap-8">
-          <a href="#" className="nav-item text-sm text-caviar-cream/80 hover:text-caviar-gold transition-colors">
-            Shop
+          <a href="#about" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
+            Über uns
           </a>
-          <a href="#" className="nav-item text-sm text-caviar-cream/80 hover:text-caviar-gold transition-colors">
-            About
+          <a href="#menu" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
+            Speisekarte
           </a>
-          <a href="#" className="nav-item text-sm text-caviar-cream/80 hover:text-caviar-gold transition-colors">
-            Sourcing
+          <a href="#contact" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
+            Kontakt
           </a>
         </div>
         <div className="flex gap-8">
-          <a href="#" className="nav-item text-sm text-caviar-cream/80 hover:text-caviar-gold transition-colors">
-            Contact
+          <a href="#contact" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
+            +49 7821 12345
           </a>
-          <a href="#" className="nav-item text-sm text-caviar-cream/80 hover:text-caviar-gold transition-colors">
-            Cart
+          <a
+            href="#contact"
+            className="nav-item text-xs tracking-widest border border-zarko-terra text-zarko-terra px-4 py-2 hover:bg-zarko-terra hover:text-white transition-colors"
+          >
+            Reservieren
           </a>
         </div>
       </nav>
@@ -105,32 +108,38 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full"
         style={{ clipPath: "circle(0% at 50% 50%)" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-transparent to-[#0a0a0a] z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-zarko-darker/60 via-transparent to-zarko-darker z-10" />
         <img
-          src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?q=80&w=2000&auto=format&fit=crop"
-          alt="Caviar"
+          src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2000&auto=format&fit=crop"
+          alt="Zum Zarko Restaurant"
           className="w-full h-full object-cover"
         />
       </div>
 
       {/* Centered Title */}
       <div className="absolute inset-0 flex items-center justify-center z-20">
-        <h1
-          ref={titleRef}
-          className="font-serif text-[12vw] md:text-[10vw] text-[#f5f0e8] overflow-hidden"
-        >
-          {splitText("Casper's")}
-        </h1>
+        <div className="text-center">
+          <span className="block text-zarko-terra text-sm tracking-[0.4em] uppercase mb-4">
+            Kroatisch • Mediterran • Regional
+          </span>
+          <h1
+            ref={titleRef}
+            className="font-serif text-[14vw] md:text-[11vw] text-zarko-cream overflow-hidden leading-none"
+          >
+            {splitText("Zum Zarko")}
+          </h1>
+        </div>
       </div>
 
       {/* Bottom Text */}
       <div className="absolute bottom-8 left-8 right-8 z-20 flex justify-between items-end">
-        <p className="max-w-md text-sm text-[#f5f0e8]/80 leading-relaxed">
-          Exceptional caviar, sourced with care and presented with intention — created for innovative restaurants, meaningful gatherings, and unforgettable moments.
+        <p className="max-w-md text-sm text-zarko-cream/80 leading-relaxed">
+          Seit über 20 Jahren bringt Zarko die Aromen seiner kroatischen Heimat nach Lahr –
+          authentische Balkan-Küche mit Schwarzwald-Herz.
         </p>
-        <div className="flex items-center gap-2 text-[#f5f0e8]">
-          <span className="text-sm tracking-widest">CAVIAR BELOW</span>
-          <div className="w-12 h-[1px] bg-[#f5f0e8]" />
+        <div className="flex items-center gap-3 text-zarko-cream/60">
+          <span className="text-xs tracking-widest">HAUPTSTRASZE 45, LAHR</span>
+          <div className="w-12 h-[1px] bg-zarko-terra" />
         </div>
       </div>
     </section>

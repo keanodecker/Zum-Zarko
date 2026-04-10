@@ -9,10 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        caviar: {
-          dark: "#0a0a0a",
+        zarko: {
+          dark: "#1a1a1a",
+          darker: "#0f0f0f",
+          terra: "#c75b39",
+          clay: "#e8a87c",
           cream: "#f5f0e8",
-          gold: "#c9a962",
+          gray: "#2d2d2d",
         },
       },
       fontFamily: {
