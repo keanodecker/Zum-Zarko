@@ -96,17 +96,19 @@ export default function FooterSection() {
         <div className="flex justify-end">
           <div className="max-w-md space-y-4">
             <p className="text-sm text-zarko-cream/60 tracking-widest">BESUCHEN SIE UNS</p>
-            <div className="space-y-2 text-sm text-zarko-cream/80">
-              <p>Hauptstraße 45, 77933 Lahr/Schwarzwald</p>
-              <p>Di–Fr: 11:30–14:30 & 17:30–22:00</p>
-              <p>Sa: 17:30–22:30 | So: 11:30–14:30 & 17:00–21:00</p>
-              <p className="text-zarko-terra">Mo: Ruhetag</p>
+            <div className="space-y-1 text-sm text-zarko-cream/80">
+              <p>Schillerstraße 3, 77933 Lahr/Schwarzwald</p>
+              <p className="pt-1">Mo: 11:00–14:00 & 17:00–23:00</p>
+              <p>Di–Do: 11:00–14:00 & 17:00–01:00</p>
+              <p>Fr: 11:00–14:00 & 17:00–01:00</p>
+              <p>Sa: 11:00–01:00</p>
+              <p className="text-zarko-terra">So: Geschlossen</p>
             </div>
             <a
-              href="tel:+497821123456"
+              href="tel:07821983792"
               className="flex items-center gap-3 border-b border-zarko-cream/30 pb-2 hover:border-zarko-terra transition-colors group"
             >
-              <span className="text-zarko-cream group-hover:text-zarko-terra transition-colors">+49 7821 12345</span>
+              <span className="text-zarko-cream group-hover:text-zarko-terra transition-colors">07821 983792</span>
               <span className="text-zarko-cream/40 group-hover:text-zarko-terra transition-colors">→</span>
             </a>
           </div>

@@ -89,7 +89,7 @@ export default function AboutSection() {
               <span className="text-xs tracking-widest text-zarko-dark/50">Jahre Erfahrung</span>
             </div>
             <div>
-              <span className="block font-serif text-3xl text-zarko-terra">4.8</span>
+              <span className="block font-serif text-3xl text-zarko-terra">4,4</span>
               <span className="text-xs tracking-widest text-zarko-dark/50">Google Bewertung</span>
             </div>
             <div>

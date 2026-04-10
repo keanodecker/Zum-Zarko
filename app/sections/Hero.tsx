@@ -88,13 +88,18 @@ export default function Hero() {
           <a href="#contact" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
             Kontakt
           </a>
+          <a href="#" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
+            Geschenkkarte
+          </a>
         </div>
         <div className="flex gap-8">
-          <a href="#contact" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
-            +49 7821 12345
+          <a href="tel:07821983792" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
+            07821 983792
           </a>
           <a
-            href="#contact"
+            href="https://zumzarko.de"
+            target="_blank"
+            rel="noopener noreferrer"
             className="nav-item text-xs tracking-widest border border-zarko-terra text-zarko-terra px-4 py-2 hover:bg-zarko-terra hover:text-white transition-colors"
           >
             Reservieren
@@ -133,12 +138,26 @@ export default function Hero() {
 
       {/* Bottom Text */}
       <div className="absolute bottom-8 left-8 right-8 z-20 flex justify-between items-end">
-        <p className="max-w-md text-sm text-zarko-cream/80 leading-relaxed">
-          Seit über 20 Jahren bringt Zarko die Aromen seiner kroatischen Heimat nach Lahr –
-          authentische Balkan-Küche mit Schwarzwald-Herz.
-        </p>
+        <div className="space-y-3">
+          <p className="max-w-md text-sm text-zarko-cream/80 leading-relaxed">
+            Seit über 20 Jahren bringt Zarko die Aromen seiner kroatischen Heimat nach Lahr –
+            authentische Balkan-Küche mit Schwarzwald-Herz.
+          </p>
+          {/* Google Bewertung – Link zu Google Maps Rezensionen */}
+          <a
+            href="https://www.google.com/maps/place/Zum+Zarko/@48.3503,7.8729,17z/data=!4m8!3m7!1s0x4791b8a00e8d7a77:0x1!8m2!3d48.3503!4d7.8729!9m1!1b1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors group"
+          >
+            <span className="text-zarko-terra">★★★★</span><span className="text-zarko-cream/40">★</span>
+            <span className="font-medium">4,4</span>
+            <span className="text-zarko-cream/50">(656 Bewertungen)</span>
+            <span className="text-xs tracking-widest text-zarko-terra group-hover:underline">→ Google Maps</span>
+          </a>
+        </div>
         <div className="flex items-center gap-3 text-zarko-cream/60">
-          <span className="text-xs tracking-widest">HAUPTSTRASZE 45, LAHR</span>
+          <span className="text-xs tracking-widest">SCHILLERSTRASSE 3, LAHR</span>
           <div className="w-12 h-[1px] bg-zarko-terra" />
         </div>
       </div>
