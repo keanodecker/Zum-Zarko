@@ -85,8 +85,11 @@ export default function Hero() {
           <a href="#menu" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
             Speisekarte
           </a>
-          <a href="#contact" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
-            Kontakt
+          <a href="#oeffnungszeiten" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
+            Öffnungszeiten
+          </a>
+          <a href="#reservieren" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
+            Reservieren
           </a>
           <a href="#" className="nav-item text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors">
             Geschenkkarte
@@ -97,12 +100,10 @@ export default function Hero() {
             07821 983792
           </a>
           <a
-            href="https://zumzarko.de"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#reservieren"
             className="nav-item text-xs tracking-widest border border-zarko-terra text-zarko-terra px-4 py-2 hover:bg-zarko-terra hover:text-white transition-colors"
           >
-            Reservieren
+            Tisch buchen
           </a>
         </div>
       </nav>

@@ -2,15 +2,19 @@ import SmoothScroll from "./components/SmoothScroll";
 import Hero from "./sections/Hero";
 import ShopSection from "./sections/ShopSection";
 import AboutSection from "./sections/AboutSection";
+import OpeningHoursSection from "./sections/OpeningHoursSection";
+import ReservationSection from "./sections/ReservationSection";
 import FooterSection from "./sections/FooterSection";
 
 export default function Home() {
   return (
     <SmoothScroll>
-      <main className="bg-[#0a0a0a]">
+      <main className="bg-zarko-dark">
         <Hero />
         <ShopSection />
         <AboutSection />
+        <OpeningHoursSection />
+        <ReservationSection />
         <FooterSection />
       </main>
     </SmoothScroll>
