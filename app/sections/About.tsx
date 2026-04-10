@@ -12,7 +12,7 @@ export default function About() {
             <div className="relative">
               <div className="aspect-[4/5] overflow-hidden rounded-sm">
                 <img
-                  src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1000&auto=format&fit=crop"
+                  src="/images/innen.png"
                   alt="Zarko Küche"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -59,7 +59,7 @@ export default function About() {
                   <span className="text-sm text-zarko-cream/60">Jahre Erfahrung</span>
                 </div>
                 <div>
-                  <span className="block text-3xl font-serif text-zarko-terra">4.8</span>
+                  <span className="block text-3xl font-serif text-zarko-terra">4,4</span>
                   <span className="text-sm text-zarko-cream/60">Google Bewertung</span>
                 </div>
                 <div>

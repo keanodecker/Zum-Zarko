@@ -19,8 +19,10 @@ export default function Navigation() {
   const navLinks = [
     { name: "Über uns", href: "#about" },
     { name: "Speisekarte", href: "#menu" },
-    { name: "Galerie", href: "#gallery" },
-    { name: "Kontakt", href: "#contact" },
+    { name: "Öffnungszeiten", href: "#oeffnungszeiten" },
+    { name: "Reservieren", href: "#reservieren" },
+    { name: "Event", href: "#event" },
+    { name: "Geschenkkarte", href: "https://www.bon-bon.de/gutschein/traditionsgaststaette-greif-zum-zarko/", external: true },
   ];
 
   return (
@@ -38,19 +40,24 @@ export default function Navigation() {
             Zum <span className="text-zarko-terra">Zarko</span>
           </a>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 className="text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors duration-300 tracking-wide"
               >
                 {link.name}
               </a>
             ))}
-            <button className="px-6 py-2 bg-zarko-terra text-white text-sm hover:bg-zarko-terra/90 transition-colors">
-              Reservieren
-            </button>
+            <a
+              href="tel:07821983792"
+              className="px-6 py-2 bg-zarko-terra text-white text-sm hover:bg-zarko-terra/90 transition-colors"
+            >
+              07821 983792
+            </a>
           </div>
 
           <button
@@ -84,6 +91,8 @@ export default function Navigation() {
                   <motion.a
                     key={link.name}
                     href={link.href}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}

@@ -16,21 +16,41 @@ export default function Footer() {
               Authentische kroatische Küche im Herzen des Schwarzwalds.
               Tradition trifft auf Herzlichkeit.
             </p>
+            <p className="text-zarko-cream/50 text-sm mt-3">
+              Schillerstraße 3, 77933 Lahr/Schwarzwald<br />
+              <a href="tel:07821983792" className="hover:text-zarko-terra transition-colors">07821 983792</a>
+            </p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
             <h4 className="text-zarko-cream font-medium mb-4">Öffnungszeiten</h4>
-            <ul className="space-y-2 text-sm text-zarko-cream/60">
-              <li>Di-Fr: 11:30-14:30 & 17:30-22:00</li>
-              <li>Sa: 17:30-22:30</li>
-              <li>So: 11:30-14:30 & 17:00-21:00</li>
-              <li className="text-zarko-terra">Mo: Ruhetag</li>
+            <ul className="space-y-1 text-sm text-zarko-cream/60">
+              <li>Mo: 11:00–14:00 & 17:00–23:00</li>
+              <li>Di–Do: 11:00–14:00 & 17:00–01:00</li>
+              <li>Fr: 11:00–14:00 & 17:00–01:00</li>
+              <li>Sa: 11:00–01:00</li>
+              <li className="text-zarko-terra">So: Geschlossen</li>
             </ul>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <h4 className="text-zarko-cream font-medium mb-4">Folgen Sie uns</h4>
-            <div className="flex gap-4">
+            <h4 className="text-zarko-cream font-medium mb-4">Links</h4>
+            <ul className="space-y-2 text-sm text-zarko-cream/60">
+              <li><a href="#about" className="hover:text-zarko-terra transition-colors">Über uns</a></li>
+              <li><a href="#menu" className="hover:text-zarko-terra transition-colors">Speisekarte</a></li>
+              <li><a href="#event" className="hover:text-zarko-terra transition-colors">Events & Partykeller</a></li>
+              <li>
+                <a
+                  href="https://www.bon-bon.de/gutschein/traditionsgaststaette-greif-zum-zarko/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-zarko-terra transition-colors"
+                >
+                  Geschenkkarte
+                </a>
+              </li>
+            </ul>
+            <div className="flex gap-4 mt-4">
               <a href="#" className="text-zarko-cream/60 hover:text-zarko-terra transition-colors">
                 <Instagram size={20} />
               </a>
@@ -42,7 +62,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-zarko-cream/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-zarko-cream/40">
-          <p>© 2024 Zum Zarko. Alle Rechte vorbehalten.</p>
+          <p>© 2025 Zum Zarko. Alle Rechte vorbehalten.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-zarko-terra transition-colors">Impressum</a>
             <a href="#" className="hover:text-zarko-terra transition-colors">Datenschutz</a>

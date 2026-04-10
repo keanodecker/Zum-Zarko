@@ -44,11 +44,10 @@ export default function Hero() {
       {/* Background */}
       <div className="hero-bg absolute inset-0 w-full h-[120%] -top-[10%]">
         <div className="absolute inset-0 bg-gradient-to-b from-zarko-darker/80 via-zarko-darker/50 to-zarko-darker z-10" />
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-70"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2000&auto=format&fit=crop')`
-          }}
+        <img
+          src="/images/aussen.png"
+          alt="Zum Zarko – Außenansicht"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
       </div>
 
@@ -70,25 +69,46 @@ export default function Hero() {
           <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-zarko-cream/80">
             <div className="flex items-center gap-2">
               <MapPin size={16} className="text-zarko-terra" />
-              <span>Hauptstraße 45, 77933 Lahr</span>
+              <span>Schillerstraße 3, 77933 Lahr</span>
             </div>
             <div className="flex items-center gap-2">
               <Phone size={16} className="text-zarko-terra" />
-              <span>+49 7821 12345</span>
+              <a href="tel:07821983792" className="hover:text-zarko-terra transition-colors">07821 983792</a>
             </div>
             <div className="flex items-center gap-2">
               <Clock size={16} className="text-zarko-terra" />
-              <span>Di-So: 11:30-14:30 & 17:30-22:00</span>
+              <span>Mo–Fr: 11:00–14:00 & ab 17:00</span>
             </div>
           </div>
 
-          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-zarko-terra text-white hover:bg-zarko-terra/90 transition-all duration-300 tracking-widest text-sm uppercase font-medium">
+          {/* Google Rating */}
+          <div className="mt-6">
+            <a
+              href="https://www.google.com/maps/place/Zum+Zarko/@48.3409658,7.8694855,18z/data=!4m15!1m8!3m7!1s0x47912e46405fa751:0xfa21ff2608363c56!2sZum+Zarko!8m2!3d48.3409658!4d7.8707756!10e2!16s%2Fg%2F1td52b_v!3m5!1s0x47912e46405fa751:0xfa21ff2608363c56!8m2!3d48.3409658!4d7.8707756!16s%2Fg%2F1td52b_v?entry=ttu&g_ep=EgoyMDI2MDQwNy4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-zarko-cream/80 hover:text-zarko-terra transition-colors"
+            >
+              <span className="text-zarko-terra">★★★★</span><span className="text-zarko-cream/40">★</span>
+              <span className="font-medium">4,4</span>
+              <span className="text-zarko-cream/50">(656 Bewertungen)</span>
+              <span className="text-xs tracking-widest text-zarko-terra">→ Google Maps</span>
+            </a>
+          </div>
+
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#reservieren"
+              className="px-8 py-4 bg-zarko-terra text-white hover:bg-zarko-terra/90 transition-all duration-300 tracking-widest text-sm uppercase font-medium"
+            >
               Tisch Reservieren
-            </button>
-            <button className="px-8 py-4 border border-zarko-cream/30 text-zarko-cream hover:border-zarko-terra hover:text-zarko-terra transition-all duration-300 tracking-widest text-sm uppercase">
+            </a>
+            <a
+              href="#menu"
+              className="px-8 py-4 border border-zarko-cream/30 text-zarko-cream hover:border-zarko-terra hover:text-zarko-terra transition-all duration-300 tracking-widest text-sm uppercase"
+            >
               Speisekarte
-            </button>
+            </a>
           </div>
         </div>
       </div>

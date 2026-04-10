@@ -22,7 +22,7 @@ export default function Contact() {
                   <MapPin className="text-zarko-terra mt-1" size={24} />
                   <div>
                     <h4 className="text-zarko-cream font-medium mb-1">Adresse</h4>
-                    <p className="text-zarko-cream/70">Hauptstraße 45<br/>77933 Lahr/Schwarzwald</p>
+                    <p className="text-zarko-cream/70">Schillerstraße 3<br/>77933 Lahr/Schwarzwald</p>
                   </div>
                 </div>
 
@@ -30,7 +30,7 @@ export default function Contact() {
                   <Phone className="text-zarko-terra mt-1" size={24} />
                   <div>
                     <h4 className="text-zarko-cream font-medium mb-1">Telefon</h4>
-                    <p className="text-zarko-cream/70">+49 7821 12345</p>
+                    <a href="tel:07821983792" className="text-zarko-cream/70 hover:text-zarko-terra transition-colors">07821 983792</a>
                   </div>
                 </div>
 
@@ -47,10 +47,11 @@ export default function Contact() {
                   <div>
                     <h4 className="text-zarko-cream font-medium mb-1">Öffnungszeiten</h4>
                     <div className="text-zarko-cream/70 space-y-1">
-                      <p>Dienstag - Freitag: 11:30 - 14:30 & 17:30 - 22:00</p>
-                      <p>Samstag: 17:30 - 22:30</p>
-                      <p>Sonntag: 11:30 - 14:30 & 17:00 - 21:00</p>
-                      <p className="text-zarko-terra mt-2">Montag: Ruhetag</p>
+                      <p>Mo: 11:00–14:00 & 17:00–23:00</p>
+                      <p>Di–Do: 11:00–14:00 & 17:00–01:00</p>
+                      <p>Fr: 11:00–14:00 & 17:00–01:00</p>
+                      <p>Sa: 11:00–01:00</p>
+                      <p className="text-zarko-terra mt-2">So: Geschlossen</p>
                     </div>
                   </div>
                 </div>
