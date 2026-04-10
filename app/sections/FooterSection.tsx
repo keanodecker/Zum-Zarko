@@ -72,8 +72,8 @@ export default function FooterSection() {
       >
         <div className="absolute inset-0 bg-zarko-darker/50 z-10" />
         <img
-          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2000&auto=format&fit=crop"
-          alt="Zum Zarko Atmosphäre"
+          src="/images/drink.png"
+          alt="Zum Zarko – Garten & Atmosphäre"
           className="w-full h-full object-cover"
         />
       </div>

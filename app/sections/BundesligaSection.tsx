@@ -158,7 +158,7 @@ export default function BundesligaSection() {
           >
             <div className="absolute inset-0 bg-gradient-to-t from-zarko-dark/60 to-transparent z-10" />
             <img
-              src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1200&auto=format&fit=crop"
+              src="/images/partykeller.jpg"
               alt="Bundesliga Live – Greif Zum Zarko"
               className="w-full h-full object-cover"
             />

@@ -116,8 +116,8 @@ export default function Hero() {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-zarko-darker/60 via-transparent to-zarko-darker z-10" />
         <img
-          src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2000&auto=format&fit=crop"
-          alt="Zum Zarko Restaurant"
+          src="/images/aussen.png"
+          alt="Zum Zarko Restaurant – Außenansicht"
           className="w-full h-full object-cover"
         />
       </div>

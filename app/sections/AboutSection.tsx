@@ -110,8 +110,8 @@ export default function AboutSection() {
         <div ref={imageRef} className="relative">
           <div className="aspect-[4/3] overflow-hidden rounded-sm">
             <img
-              src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1200&auto=format&fit=crop"
-              alt="Zarko Küche"
+              src="/images/innen.png"
+              alt="Zum Zarko – Innenbereich"
               className="w-full h-full object-cover"
             />
           </div>
