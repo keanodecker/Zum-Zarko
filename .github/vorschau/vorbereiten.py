@@ -1,6 +1,6 @@
 """Stellt die Seite auf eine Datei-Fassung unter /<VORSCHAU_PFAD> um (Next.js, Astro oder reines HTML).
 Läuft nur auf GitHub, nie lokal committen. Schreibt ART (next|astro|html) und OUT (Ausgabeordner) nach $GITHUB_ENV."""
-import glob, json, os, shutil, sys
+import glob, json, os, re, shutil, sys
 
 pfad = os.environ.get("VORSCHAU_PFAD", "").strip("/")
 if not pfad:
@@ -16,8 +16,10 @@ if art == "next":
     out = "out"
     for alt in glob.glob("next.config.*"):
         os.remove(alt)
-    with open("next.config.ts", "w") as f:
-        f.write(f"""import type {{ NextConfig }} from 'next'
+    haupt = int((re.findall(r"\d+", abh["next"]) or ["15"])[0])
+    if haupt >= 15:
+        with open("next.config.ts", "w") as f:
+            f.write(f"""import type {{ NextConfig }} from 'next'
 import path from 'node:path'
 const nextConfig: NextConfig = {{
   output: 'export',
@@ -28,6 +30,10 @@ const nextConfig: NextConfig = {{
 }}
 export default nextConfig
 """)
+    else:  # Next 14 und älter kennt next.config.ts nicht
+        with open("next.config.mjs", "w") as f:
+            f.write(f"""export default {{ output: 'export', basePath: '/{pfad}', trailingSlash: true, images: {{ unoptimized: true }} }}
+""")
     # robots/sitemap brauchen einen Server; die Vorschau sperrt Suchmaschinen über die robots.txt der Wurzel
     for muster in ("app/robots.*", "app/sitemap.*", "src/app/robots.*", "src/app/sitemap.*"):
         for datei in glob.glob(muster):
@@ -36,7 +42,6 @@ export default nextConfig
     for ordner in ("app/api", "src/app/api"):
         shutil.rmtree(ordner, ignore_errors=True)
     # Seiten, die die Adresszeile auf dem Server lesen (searchParams), gehen als Datei nicht: in der Vorschau leer
-    import re
     for datei in glob.glob("app/**/page.*", recursive=True) + glob.glob("src/app/**/page.*", recursive=True):
         text = open(datei, encoding="utf-8").read()
         neu = re.sub(r"await\s+searchParams\b", "({} as any)", text)
