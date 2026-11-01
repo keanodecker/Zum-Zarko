@@ -27,12 +27,12 @@ jobs:
         if: env.ART != 'html'
         with:
           node-version: 24
-          cache: npm
+          cache: ${{ hashFiles('package-lock.json') != '' && 'npm' || '' }}
 
       - name: Bauen
         if: env.ART != 'html'
         run: |
-          npm ci
+          if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
           if [ "$ART" = next ]; then npx next build; else npx astro build; fi
 
       - name: Pfade umschreiben und prüfen
